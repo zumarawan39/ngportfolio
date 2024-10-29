@@ -1,0 +1,65 @@
+<nav class="navbar" id="top">
+    <div class="nav_logo">
+        <div class="nav_img">
+            <a routerLink="/dashboard">
+              <img src="assets/logo.png" alt="Logo" class="logo" />
+            </a>
+          </div>
+  
+      <div class="loading">
+        <a routerLink="/">
+          <svg width="64px" height="48px">
+            <polyline
+              points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24"
+              id="back"
+            ></polyline>
+            <polyline
+              points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24"
+              id="front"
+            ></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  
+    <div class="list" [ngClass]="{ show: hide }">
+      <ul>
+        <div class="cross-icon" (click)="hideNav()">
+            &#10005; 
+          </div>
+        <li ><a  routerLink="/home" >Home</a></li>
+        <li><a routerLink="/experience">Experience</a></li>
+        <li><a routerLink="/education">Education</a></li>
+        <li><a routerLink="/projects">Projects</a></li>
+        <li class="li_last"><a routerLink="/contact">Contact Me</a></li>
+      </ul>
+    </div>
+   
+    <div class="btnnav">
+        <button class="button" routerLink="/contact">
+           Contact
+            <svg
+              class="svg-icon"
+              viewBox="0 0 16 19"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+              ></path>
+            </svg>
+          </button>
+          
+    </div>
+  
+    <div class="icons" id="icons" (click)="handle()">
+      <div class="line" id="line"></div>
+      <div class="line" id="line"></div>
+      <div class="line" id="line"></div>
+    </div>
+   
+  </nav>
+  <div class="mainbtn" (click)="scrollToTop()">
+    <i class="fa fa-arrow-up"></i>
+  </div>
+  <div class="overlay" [ngClass]="{ show: hide }" (click)="handle()"></div>
+  

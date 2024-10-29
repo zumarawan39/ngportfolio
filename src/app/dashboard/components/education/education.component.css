@@ -1,0 +1,72 @@
+.education{
+    overflow-y: hidden;
+}
+.education  ::-webkit-scrollbar {
+    display: none  !important; 
+  }
+.main_education1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+    margin-left: 30px;
+    margin-right: 30px;  
+}
+
+.l1edu {
+    width: 50%;
+    animation-name: slideInLeft;
+}
+.l1edu, .r1edu{
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.r1edu {
+    width: 50%;
+    margin-top: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 18px;
+    text-align: center;
+    animation-name: slideInRight;
+}
+
+img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.heade1 {
+    font-size: 40px;
+    color: #9cff1e;
+}
+
+.l1edu img {
+    width: 500px;
+    /* height: 400px; */
+}
+@keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }

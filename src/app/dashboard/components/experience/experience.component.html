@@ -1,0 +1,97 @@
+<div class="experience-section">
+    <div class="experience-header">
+      <div class="left_exp">
+        <img src="assets/exp1.png">
+      </div>
+      <div class="right_exp">
+        <h1>Experience</h1>
+       <h2>Remote/Onsite Work</h2>
+      <p>
+        I'm a passionate software engineer who loves crafting creative solutions with code. 
+        My main area of expertise revolves around building scalable applications using the 
+        MERN stack. Additionally, I have a strong enthusiasm for fostering tech communities and 
+        actively engage in various tech events. Guiding and supporting aspiring developers as 
+        they begin their career paths brings me immense joy because we all know the struggle of 
+        finding the missing semicolon. 😉
+      </p>
+      </div>
+    </div>
+ <!-- Work Section -->
+<!-- Work Section -->
+<div class="bottom-header">
+  <div class="experience-item" (click)="toggleWork()">
+    <h3>Onsite Work</h3>
+    <span [class]="isWorkOpen ? 'open' : 'closed'">+</span>
+  </div>
+  <div *ngIf="isWorkOpen" class="work-details">
+    <ng-container *ngFor="let exp of experiences">
+      <ng-container *ngIf="exp.type === 'onsite'">
+        <div class="expcard">
+          <div class="lexp">
+            <img [src]="exp.image" [alt]="exp.altText">
+          </div>
+          <div class="rexp">
+            <div class="upexp">
+              <div class="workexp-left">
+                <h1>{{ exp.title }}</h1>
+                <p>{{ exp.company }}</p>
+              </div>
+              <div class="workexp-right">
+                <p>{{ exp.duration }}</p>
+                <p>{{ exp.location }}</p>
+              </div>
+            </div>
+            <div class="doexp">
+              <p *ngFor="let desc of exp.description">{{ desc }}</p>
+              <div class="certificate">
+                <a (click)="openProofDialog(exp.proofImage, 'Proof for ' + exp.title)">See Proof</a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+
+  <!-- Volunteer Section -->
+  <div class="experience-item" (click)="toggleVolunteer()">
+    <h3>Remote Work</h3>
+    <span [class]="isVolunteerOpen ? 'open' : 'closed'">+</span>
+  </div>
+  <div *ngIf="isVolunteerOpen" class="volunteer-details">
+    <ng-container *ngFor="let exp of experiences">
+      <ng-container *ngIf="exp.type === 'remote'">
+        <div class="expcard">
+          <div class="lexp">
+            <img [src]="exp.image" [alt]="exp.altText">
+          </div>
+          <div class="rexp">
+            <div class="upexp">
+              <div class="workexp-left">
+                <h1>{{ exp.title }}</h1>
+                <p>{{ exp.company }}</p>
+              </div>
+              <div class="workexp-right">
+                <p>{{ exp.duration }}</p>
+                <p>{{ exp.location }}</p>
+              </div>
+            </div>
+            <div class="doexp">
+              <p *ngFor="let desc of exp.description">{{ desc }}</p>
+              <div class="certificate">
+                <a (click)="openProofDialog(exp.proofImage, 'Proof for ' + exp.title)">See Proof</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+
+
+
+  </div>
+  

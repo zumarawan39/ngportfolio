@@ -1,0 +1,257 @@
+.experience-section {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+ overflow-y: hidden
+  
+}
+.experience-section   ::-webkit-scrollbar {
+  display: none  !important; 
+}
+.experience-header{
+  display: flex;
+  justify-content: center;
+  margin: 40px 0px;
+}
+.experience-header h1 {
+  font-size: 4.5rem;
+}
+
+.experience-header h2 {
+  font-size: 2.5rem;
+}
+
+.experience-header p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  text-align: left;
+  line-height: 30px;
+  margin-right: 20px;
+}
+
+.experience-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 10px;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+  border-bottom: 2px solid black;
+}
+
+.experience-item h3 {
+  font-size: 1.2rem;
+}
+
+.experience-item span {
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+span.open {
+  transform: rotate(45deg);
+}
+
+span.closed {
+  transform: rotate(0deg);
+}
+
+.work-details, .volunteer-details {
+  background-color: white;
+    margin: 10px 0;
+    padding: 15px;
+    display: flex;
+    gap: 30px;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.left_exp{
+  width: 50%;
+    margin-top: -22px;
+    animation-name: slideInLeft;
+}
+.left_exp, .right_exp {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.right_exp{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  gap: 20px;
+  animation-name: slideInRight;
+}
+.left_exp img {
+  width: 70%;
+  margin-left: -110px;
+}
+img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.bottom-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.lexp {
+  width: 20%;
+}
+.expcard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(100px); /* Move down initially */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.expcard.visible {
+  opacity: 1;
+  transform: translateY(0); /* Move up to its normal position */
+}
+.rexp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  text-align: start;
+}
+.upexp {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.certificate {
+  text-align: right;
+  margin: 10px 0px;
+  font-size: 20px;
+  color: blue;
+  text-transform: uppercase;
+  font-style: italic;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .experience-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .experience-header p {
+    font-size: 1rem;
+    margin-right: 0;
+    line-height: 1.4;
+  }
+
+  /* Stack .left_exp and .right_exp vertically */
+  .experience-header {
+    flex-direction: column;
+  }
+
+  .left_exp, .right_exp {
+    width: 100%;
+    text-align: center;
+  }
+
+  .left_exp img {
+    width: 80%;
+    margin-left: 0;
+  }
+
+  .right_exp {
+    align-items: center;
+  }
+
+  /* Adjust padding and margin */
+  .experience-section {
+    margin: 15px;
+  }
+
+  .experience-item {
+    align-items: center;
+    padding: 8px;
+  }
+
+  .bottom-header {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .expcard {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align */
+  }
+  
+  .left_exp {
+    width: 100%; /* Full width */
+    margin-top: 0; /* Reset margin */
+  }
+
+  .right_exp {
+    width: 100%; /* Full width */
+    align-items: center; /* Center align */
+  }
+  
+  .experience-item {
+    align-items: center; /* Center align */
+  }
+
+  .work-details, .volunteer-details {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+  .workexp-left h1 {
+    font-size: 20px;
+}
+.lexp{
+  width: 60%;
+}
+.workexp-right p {
+  font-size: 10px;
+}
+}
